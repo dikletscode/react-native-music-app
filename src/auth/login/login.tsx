@@ -22,10 +22,8 @@ const Login = ({navigation}: any) => {
   const handleSubmit = () => {
     axios
       .postLogin(input.email, input.password)
-      .then(res => {
-        setMessage(res.data.result.isLogin);
-
-        console.log(res.data.result, '12');
+      .then(() => {
+        navigation.navigate('Home');
       })
       .catch(err => {
         setMessage(err.message);

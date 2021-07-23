@@ -1,8 +1,23 @@
 import React from 'react';
 import {ScrollView, View, Text, Image} from 'react-native';
 import styles from './chart.style';
+import axios from '../../../services/auth.service';
+import {useEffect} from 'react';
 
 const Chart = () => {
+  const getData = async () => {
+    return await axios
+      .getMusic()
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
       <View style={styles.fullComponent}>
