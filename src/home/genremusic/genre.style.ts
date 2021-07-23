@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   fullComponent: {
     paddingTop: 40,
   },
-  chart: {
+  genre: {
     flex: 1,
     height: 250,
     padding: 10,

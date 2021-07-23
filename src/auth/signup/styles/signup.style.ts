@@ -10,20 +10,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
-  background: {
-    flex: 1,
-    resizeMode: 'cover',
-    width: undefined,
-    height: undefined,
-  },
+
   desc: {color: 'black', fontSize: 30, padding: 34},
-  input: {
-    color: 'black',
-    backgroundColor: 'rgba(255,255,255, 0.6)',
-    height: 50,
-    minWidth: 300,
-    borderRadius: 50,
-    paddingLeft: 30,
+  inputView: {
+    paddingBottom: 30,
   },
   banner: {
     padding: 50,
@@ -34,11 +24,14 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     width: 100,
   },
+  textButton: {
+    textAlign: 'center',
+    padding: 12,
+    color: 'white',
+  },
 
   container: {
-    flex: 0.6,
-    paddingBottom: 50,
     alignItems: 'center',
-    justifyContent: 'space-around',
+    paddingTop: 40,
   },
 });

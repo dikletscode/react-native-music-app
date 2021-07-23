@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import styles from './style/home.style';
-import Chart from './musicChart/charts';
+import Genre from './genremusic/genre';
+import Chart from './chart/chart';
 
 const Home = () => {
   return (
@@ -10,8 +11,12 @@ const Home = () => {
         <Text>asdjkhasd</Text>
       </View>
       <View>
+        <Genre />
+      </View>
+      <View>
         <Chart />
       </View>
+
       <View style={styles.content}></View>
     </ScrollView>
   );
