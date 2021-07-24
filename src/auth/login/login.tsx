@@ -1,14 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, TouchableOpacity, Text, ImageBackground} from 'react-native';
 import {styles} from './styles/login';
 import axios from '../../../services/auth.service';
 import FormInput from '../input';
+import {GlobContext} from '../../../context/context';
+
 interface Input {
   email: string;
   password: string;
 }
 
 const Login = ({navigation}: any) => {
+  const {state, dispatch} = useContext(GlobContext);
+
   const [input, setInput] = useState<Input>({
     email: '',
     password: '',
@@ -19,14 +23,17 @@ const Login = ({navigation}: any) => {
       setInput({...input, [state]: newText});
     };
   };
+
   const handleSubmit = () => {
+    dispatch({type: 'LOADING'});
     axios
       .postLogin(input.email, input.password)
-      .then(() => {
-        navigation.navigate('Home');
+      .then(res => {
+        dispatch({type: 'LOGIN_SUCCESS', payload: res.data});
       })
       .catch(err => {
         setMessage(err.message);
+        dispatch({type: 'LOGIN_FAILED', payload: err});
       });
   };
   const toSignup = () => {

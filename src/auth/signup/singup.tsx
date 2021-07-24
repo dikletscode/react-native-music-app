@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import {styles} from './styles/signup.style';
 import axios from '../../../services/auth.service';
-
 import FormInput from '../input';
 
 interface Input {

@@ -1,5 +1,5 @@
 import axiosInstance from './axiosInstance';
-import jwtValidity from './jwtForHeader';
+
 const postLogin = (email: string, password: string) => {
   return axiosInstance.post('/login', {
     email: email,
@@ -14,7 +14,7 @@ const postSignup = (username: string, email: string, password: string) => {
   });
 };
 const getMusic = () => {
-  return axiosInstance.get('/private', {headers: jwtValidity()});
+  return axiosInstance.get('/private');
 };
 
 export default {
